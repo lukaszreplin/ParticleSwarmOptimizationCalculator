@@ -13,5 +13,9 @@ namespace ParticleSwarmOptimizationCalculator.Models
         public List<double> Avgs { get; set; } = new List<double>();
 
         public List<double> Maxs { get; set; } = new List<double>();
+
+        public double X { get; set; }
+
+        public double FX { get; set; }
     }
 }

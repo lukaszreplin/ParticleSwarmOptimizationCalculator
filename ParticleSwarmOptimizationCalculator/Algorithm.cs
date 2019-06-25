@@ -69,7 +69,10 @@ namespace ParticleSwarmOptimizationCalculator
                 counter++;
                 form.RefreshParticlesChart(_particles);
             }
-            while (counter < _parameters.Iterations);
+            while (counter < _parameters.Iterations && !_particles.All(p => Math.Abs(p.FX - _particles.Max(_ => _.FX)) < 0.1));
+            var bestParticle = _particles.OrderByDescending(_ => _.FX).First();
+            _result.FX = bestParticle.FX;
+            _result.X = bestParticle.X;
         }
 
         private void InitParticles(List<Particle> input)

@@ -46,7 +46,6 @@ namespace ParticleSwarmOptimizationCalculator
             c3Tb.Text = "1,2";
             fromTb.Text = "-4";
             toTb.Text = "12";
-
         }
 
         private async void StartButton_Click(object sender, EventArgs e)
@@ -69,6 +68,8 @@ namespace ParticleSwarmOptimizationCalculator
                 resChart.Series["Average"].Points.AddXY(i, results.Avgs[i - 1]);
                 resChart.Series["Maximum"].Points.AddXY(i, results.Maxs[i - 1]);
             }
+            xResultTb.Text = results.X.ToString();
+            fxResultTb.Text = results.FX.ToString();
             startButton.Enabled = true;
         }
 
